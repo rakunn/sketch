@@ -1,9 +1,10 @@
 $(document).ready(function() {
 	$('.pix').mouseleave(function() {
-		$(this).css('background-color', 'black');});
+		$(this).css('background-color', 'black');
+});
 	});
 
-function clearpad() {
+function clearpad() 		{
 	$('.pix').css('background-color', 'white');
 }
 
@@ -20,3 +21,18 @@ function start() {
 		$(this).css('background-color', 'black');});
 }
 
+function randColor() {
+	rc = Math.floor((Math.random())*256)
+	gc = Math.floor((Math.random())*256)
+	bc = Math.floor((Math.random())*256)
+	rgbc = "rgb("+rc+", "+gc+", "+bc+")"
+	$(".pix").mouseenter(function() {
+		$(this).css('background-color', rgbc);
+});
+}
+	
+$(document).ready(function() {
+	$('#randomcolor').click(function() {
+		randColor();
+	});
+});
